@@ -1,0 +1,551 @@
+<%- include('header.ejs') -%>
+
+<style>
+
+    .checkbox{
+    -webkit-appearance: none;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background: #f8f7f7;
+    border: 5px solid #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .checkbox:checked{
+    background: linear-gradient(140deg, #E54860 0%, #9556BA 40%, #555FFF 98%);
+    }
+
+    .checkbox::before{
+    content: '';
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url(check.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+</style>
+
+
+
+    <!-- ==========Banner-Section========== -->
+    <section class="details-banner hero-area bg_img seat-plan-banner" data-background="assets/images/banner/banner04.jpg">
+        <div class="container">
+            <div class="details-banner-wrapper">
+                <div class="details-banner-content style-two">
+                    <h3 class="title">Venus</h3>
+                    <div class="tags">
+                        <a href="#0">City Walk</a>
+                        <a href="#0">English - 2D</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==========Banner-Section========== -->
+
+    <!-- ==========Page-Title========== -->
+    <form action="movie_seat_plan" method="post" >
+    <section class="page-title bg-one">
+        <div class="container">
+            <div class="page-title-area">
+                <div class="item md-order-1">
+                    <a href="movie_details" class="custom-button back-button">
+                        <i class="flaticon-double-right-arrows-angles"></i>back
+                    </a>
+                </div>
+                <div class="item date-item" >
+                    <input type="date" name="book_date" class="date_input">
+                </div>
+                <div class="item date-item">                   
+                    
+                    <select class="select-bar" name="movie_time">
+                        <option >09:40</option>
+                        <option >13:45</option>
+                        <option >15:45</option>
+                        <option >19:50</option>
+                    </select>
+                </div>
+                <div class="item">
+                    <h5 class="title">05:00</h5>
+                    <p>Mins Left</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==========Page-Title========== -->
+
+    <!-- ==========Movie-Section========== -->
+    <div class="seat-plan-section padding-bottom padding-top">
+        <div class="container">
+            <div class="screen-area">
+                <h4 class="screen">screen</h4>
+                <div class="screen-thumb">
+                    <img src="assets/images/movie/screen-thumb.png" alt="movie">
+                </div>
+                <h5 class="subtitle">silver plus</h5>
+                <div class="screen-wrapper">
+                    <ul class="seat-area">
+                        <li class="seat-line">
+                            <span>G</span>
+                            <ul class="seat--area">
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g1" class="sheet checkbox"  onchange="book_ticket(0)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g2" class="sheet checkbox" onchange="book_ticket(1)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g3" class="sheet checkbox" onchange="book_ticket(2)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g4" class="sheet checkbox" onchange="book_ticket(3)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g5" class="sheet checkbox"  onchange="book_ticket(4)" value="120" style="height: 45px; width: 45px;">                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g6" class="sheet checkbox"  onchange="book_ticket(5)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g7" class="sheet checkbox"  onchange="book_ticket(6)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g8" class="sheet checkbox"  onchange="book_ticket(7)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g9" class="sheet checkbox"  onchange="book_ticket(8)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g10" class="sheet checkbox"  onchange="book_ticket(9)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g9" class="sheet checkbox"  onchange="book_ticket(10)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g10" class="sheet checkbox"  onchange="book_ticket(11)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g11" class="sheet checkbox"  onchange="book_ticket(12)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="g12" class="sheet checkbox"  onchange="book_ticket(13)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <span>G</span>
+                        </li>
+                        <li class="seat-line">
+                            <span>f</span>
+                            <ul class="seat--area">
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                           <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                           <input type="checkbox" name="f1" class="sheet checkbox"  onchange="book_ticket(14)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="f2" class="sheet checkbox"  onchange="book_ticket(15)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="f3" class="sheet checkbox"  onchange="book_ticket(16)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="f4" class="sheet checkbox"  onchange="book_ticket(17)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="f5" class="sheet checkbox"  onchange="book_ticket(18)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat seat-free">
+                                            <!-- <img src="assets/images/movie/seat01-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="f6" class="sheet checkbox"  onchange="book_ticket(19)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat seat-free">
+                                            <!-- <img src="assets/images/movie/seat01-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="f7" class="sheet checkbox"  onchange="book_ticket(20)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="f8" class="sheet checkbox"  onchange="book_ticket(21)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="f9" class="sheet checkbox"  onchange="book_ticket(22)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="f10" class="sheet checkbox"  onchange="book_ticket(23)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat seat-free">
+                                            <!-- <img src="assets/images/movie/seat01-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="f11" class="sheet checkbox"  onchange="book_ticket(24)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat seat-free">
+                                            <!-- <img src="assets/images/movie/seat01-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="f12" class="sheet checkbox"  onchange="book_ticket(25)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat seat-free">
+                                            <!-- <img src="assets/images/movie/seat01-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="f13" class="sheet checkbox"  onchange="book_ticket(26)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat01.png" alt="seat"> -->
+                                            <input type="checkbox" name="f14" class="sheet checkbox"  onchange="book_ticket(27)" value="120" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <span>f</span>
+                        </li>
+                    </ul>
+                </div>
+                <h5 class="subtitle">silver plus</h5>
+                <div class="screen-wrapper">
+                    <ul class="seat-area couple">
+                        <li class="seat-line">
+                            <span>e</span>
+                            <ul class="seat--area">
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="e1,e2" class="sheet checkbox"  onchange="book_ticket(28)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="e3,e4" class="sheet checkbox"  onchange="book_ticket(29)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="e5,e6" class="sheet checkbox"  onchange="book_ticket(30)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="e7,e8" class="sheet checkbox"  onchange="book_ticket(31)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="e9,e10" class="sheet checkbox"  onchange="book_ticket(32)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="e11,e12" class="sheet checkbox"  onchange="book_ticket(33)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="e13,e14" class="sheet checkbox"  onchange="book_ticket(34)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <span>e</span>
+                        </li>
+                        <li class="seat-line">
+                            <span>d</span>
+                            <ul class="seat--area">
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="d1,d2" class="sheet checkbox"  onchange="book_ticket(35)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="d3,d4" class="sheet checkbox"  onchange="book_ticket(36)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="d5,d6" class="sheet checkbox"  onchange="book_ticket(37)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat seat-free-two">
+                                            <!-- <img src="assets/images/movie/seat02-booked.png" alt="seat"> -->
+                                            <input type="checkbox" name="d7,d8" class="sheet checkbox"  onchange="book_ticket(38)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="d9,d10" class="sheet checkbox"  onchange="book_ticket(39)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="d11,d12" class="sheet checkbox"  onchange="book_ticket(40)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="d13,d14" class="sheet checkbox"  onchange="book_ticket(41)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <span>d</span>
+                        </li>
+                        <li class="seat-line">
+                            <span>c</span>
+                            <ul class="seat--area">
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="c1,c2" class="sheet checkbox"  onchange="book_ticket(42)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="c3,c4" class="sheet checkbox"  onchange="book_ticket(43)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="c5,c6" class="sheet checkbox"  onchange="book_ticket(44)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="c7,c8" class="sheet checkbox"  onchange="book_ticket(45)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="c9,c10" class="sheet checkbox"  onchange="book_ticket(46)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat seat-free-two">
+                                            <!-- <img src="assets/images/movie/seat02-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="c11,c12" class="sheet checkbox"  onchange="book_ticket(47)" value="500" style="height: 45px; width: 45px;">
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="c13,c14" class="sheet checkbox"  onchange="book_ticket(48)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <span>c</span>
+                        </li>
+                        <li class="seat-line">
+                            <span>b</span>
+                            <ul class="seat--area">
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="b1,b2" class="sheet checkbox"  onchange="book_ticket(49)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="b3,b4" class="sheet checkbox"  onchange="book_ticket(50)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="b5,b6" class="sheet checkbox"  onchange="book_ticket(51)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat seat-free-two">
+                                            <!-- <img src="assets/images/movie/seat02-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="b7,b8" class="sheet checkbox"  onchange="book_ticket(52)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="b9,b10" class="sheet checkbox"  onchange="book_ticket(53)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="b11,b12" class="sheet checkbox"  onchange="book_ticket(54)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat">
+                                            <!-- <img src="assets/images/movie/seat02.png" alt="seat"> -->
+                                            <input type="checkbox" name="b13,b14" class="sheet checkbox"  onchange="book_ticket(55)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <span>b</span>
+                        </li>
+                        <li class="seat-line">
+                            <span>a</span>
+                            <ul class="seat--area">
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat seat-free-two">
+                                            <!-- <img src="assets/images/movie/seat02-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="a1,a2" class="sheet checkbox"  onchange="book_ticket(56)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                        <li class="single-seat seat-free-two">
+                                            <!-- <img src="assets/images/movie/seat02-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="a3,a4" class="sheet checkbox"  onchange="book_ticket(57)" value="500" style="height: 45px; width: 45px;">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat seat-free-two">
+                                            <!-- <img src="assets/images/movie/seat02-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="a5,a6" class="sheet checkbox"  onchange="book_ticket(58)" value="500" style="height: 45px; width: 45px;">
+                                            
+                                        </li>
+                                        <li class="single-seat seat-free-two">
+                                            <!-- <img src="assets/images/movie/seat02-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="a7,a8" class="sheet checkbox"  onchange="book_ticket(59)" value="500" style="height: 45px; width: 45px;">
+                                            
+                                        </li>
+                                        <li class="single-seat seat-free-two">
+                                            <!-- <img src="assets/images/movie/seat02-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="a9,a10" class="sheet checkbox"  onchange="book_ticket(60)" value="500" style="height: 45px; width: 45px;">
+                                            
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat seat-free-two">
+                                            <!-- <img src="assets/images/movie/seat02-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="a11,a12" class="sheet checkbox"  onchange="book_ticket(61)" value="500" style="height: 45px; width: 45px;">
+                                            
+                                        </li>
+                                        <li class="single-seat seat-free-two">
+                                            <!-- <img src="assets/images/movie/seat02-free.png" alt="seat"> -->
+                                            <input type="checkbox" name="b13,a14" class="sheet checkbox"  onchange="book_ticket(62)" value="500" style="height: 45px; width: 45px;">
+                                            
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <span>a</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="proceed-book bg_img" data-background="assets/images/movie/movie-bg-proceed.jpg">
+                <div class="proceed-to-book">
+                    <div class="book-item">
+                        <span>You have Choosed Seat</span>
+                        <!-- <h3 class="title" id="select_sheet"></h3> -->
+                        <input type="text" name="sheet_no" id="select_sheet" class="title">
+                    </div>
+                    <div class="book-item">
+                        <span>total price</span>
+                        <!-- <h3 class="title" id="amount"></h3> -->
+                        <input type="text" name="total_price" id="amount" class="title">
+                    </div>
+                    <div class="book-item">
+                        <!-- <a href="movie_seat_plan" class="custom-button">proceed</a> -->
+                        <input type="submit" value="proceed" class="custom-button" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+    <!-- ==========Movie-Section========== -->
+
+    <script>
+        const book_sheet = [] ;
+        var count = 0 ;
+
+        function book_ticket(k)
+        {
+            var total_sheet = document.getElementsByClassName('sheet')[k];    //book_ticket(0) or book_ticket(1)
+            var total_sheet1 = document.getElementsByClassName('sheet')[k].name;   //g1
+            var price = document.getElementsByClassName('sheet')[k].value ;         //120
+
+            if(total_sheet.checked == true)
+            {
+                if(!book_sheet.includes(total_sheet1)){
+                    book_sheet.push(total_sheet1);
+
+                    count = count + parseInt(price);
+
+                    var a = document.getElementById('select_sheet').value = book_sheet;
+                    document.getElementById('select_sheet').innerText = a ;
+
+                    var b = document.getElementById('amount').value = count;
+                    document.getElementById('amount').innerText = b ;
+                }
+            }
+            else
+            {
+                if(book_sheet.includes(total_sheet1)){
+                    const index = book_sheet.indexOf(total_sheet1);
+                    const x = book_sheet.splice(index,1);
+
+                    count = count - parseInt(price);
+
+                    var a = document.getElementById('select_sheet').value = book_sheet;
+                    document.getElementById('select_sheet').innerText = a ;
+
+                    var b = document.getElementById('amount').value = count;
+                    document.getElementById('amount').innerText = b ;
+
+                }
+            }
+        }
+    </script>
+
+<%- include('footer.ejs') -%>
